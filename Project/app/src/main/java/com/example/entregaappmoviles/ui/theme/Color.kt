@@ -1,4 +1,4 @@
-package com.example.appnativafinanzas.ui.theme
+package com.example.entregaappmoviles.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

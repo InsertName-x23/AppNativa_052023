@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "appNativaFinanzas"
+rootProject.name = "entregaAppMoviles"
 include(":app")
