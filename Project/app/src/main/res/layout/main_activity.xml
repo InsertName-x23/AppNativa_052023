@@ -1,0 +1,75 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <!-- Menú Lateral -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/menu_color"
+        android:layout_weight="1">
+
+        <!-- Parte Superior con ScrollView -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Varios Botones -->
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/buttons_desing"
+                    android:drawableLeft="@drawable/folder_solid_24" />
+                <!-- Añadir más botones según sea necesario -->
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Parte Inferior con Tres Botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/plus_regular_24"
+                android:layout_margin="15dp"
+                android:background="@drawable/buttons_desing"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/dollar_regular_24"
+                android:layout_margin="15dp"
+                android:background="@drawable/buttons_desing"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/home_solid_24"
+                android:layout_margin="15dp"
+                android:background="@drawable/buttons_desing"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Contenido Principal -->
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="@color/background_page">
+        <!-- Aquí va el contenido principal -->
+    </FrameLayout>
+</LinearLayout>

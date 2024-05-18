@@ -15,7 +15,7 @@ import com.example.entregaappmoviles.ui.theme.EntregaAppMovilesTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
+        /*setContent {
             EntregaAppMovilesTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
@@ -25,10 +25,12 @@ class MainActivity : ComponentActivity() {
                     Greeting("Android")
                 }
             }
-        }
+        }*/
+
+        setContentView(R.layout.main_activity)
     }
 }
-
+/*
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
@@ -43,4 +45,4 @@ fun GreetingPreview() {
     EntregaAppMovilesTheme {
         Greeting("Android")
     }
-}
+}*/
