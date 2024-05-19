@@ -1,5 +1,5 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
@@ -8,14 +8,14 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_weight="1"
         android:background="@color/menu_color"
-        android:layout_weight="1">
+        android:orientation="vertical">
 
         <!-- Parte Superior con ScrollView -->
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="77dp"
+            android:layout_height="374dp"
             android:layout_weight="1">
 
             <LinearLayout
@@ -25,9 +25,9 @@
 
                 <!-- Varios Botones -->
                 <Button
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
+                    android:layout_margin="7dp"
                     android:background="@drawable/buttons_desing"
                     android:drawableLeft="@drawable/folder_solid_24" />
                 <!-- Añadir más botones según sea necesario -->
@@ -37,39 +37,79 @@
 
         <!-- Parte Inferior con Tres Botones -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="78dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="1dp">
 
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/plus_regular_24"
-                android:layout_margin="15dp"
-                android:background="@drawable/buttons_desing"/>
+                android:layout_margin="7dp"
+                android:background="@drawable/buttons_desing"
+                android:drawableLeft="@drawable/plus_regular_24" />
+
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/dollar_regular_24"
-                android:layout_margin="15dp"
-                android:background="@drawable/buttons_desing"/>
+                android:layout_margin="7dp"
+                android:background="@drawable/buttons_desing"
+                android:drawableLeft="@drawable/dollar_regular_24" />
+
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/home_solid_24"
-                android:layout_margin="15dp"
-                android:background="@drawable/buttons_desing"/>
+                android:layout_margin="7dp"
+                android:background="@drawable/buttons_desing"
+                android:drawableLeft="@drawable/home_solid_24" />
 
         </LinearLayout>
     </LinearLayout>
 
     <!-- Contenido Principal -->
     <FrameLayout
-        android:layout_width="0dp"
+        android:layout_width="89dp"
         android:layout_height="match_parent"
         android:layout_weight="3"
         android:background="@color/background_page">
         <!-- Aquí va el contenido principal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/filters_desing"
+                android:drawableRight="@drawable/down_arrow_solid_24" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/filters_desing"
+                android:drawableRight="@drawable/down_arrow_solid_24" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="37dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/filters_desing"
+                android:drawableRight="@drawable/down_arrow_solid_24" />
+        </LinearLayout>
     </FrameLayout>
 </LinearLayout>
