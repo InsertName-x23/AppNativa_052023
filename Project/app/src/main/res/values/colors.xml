@@ -17,4 +17,6 @@
     <color name="search_opaque">#ffaa3f</color>
     <color name="selected_background">#ffaa3f</color>
     <color name="default_background">#3d3d3d</color>
+    <color name="colorPrimary">#007F73</color>
+    <color name="editTextColor">#80007F73</color> <!-- #80 representa el 50% de opacidad -->
 </resources>
