@@ -7,18 +7,33 @@ import com.example.entregaappmoviles.databinding.MainActivityBinding
 
 class MainActivity : AppCompatActivity() {
 
+<<<<<<< HEAD
     private lateinit var binding: MainActivityBinding
+=======
+    lateinit var binding: MainActivityBinding
+>>>>>>> main
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = MainActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+<<<<<<< HEAD
+=======
+        if(savedInstanceState == null) {
+            replaceFragment(FragmentHome())
+        }
+
+>>>>>>> main
         binding.addFolderBtn.setOnClickListener() {
             replaceFragment(FragmentAddFolder())
         }
 
         binding.homeButton.setOnClickListener() {
+<<<<<<< HEAD
 
+=======
+            replaceFragment(FragmentHome())
+>>>>>>> main
         }
     }
 

@@ -75,7 +75,11 @@
     <!-- Contenido Principal -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container"
+<<<<<<< HEAD
         android:layout_width="103dp"
+=======
+        android:layout_width="78dp"
+>>>>>>> main
         android:layout_height="match_parent"
         android:layout_weight="3" />
 </LinearLayout>

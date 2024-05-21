@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD
 
     <style name="Theme.EntregaAppMoviles" parent="android:Theme.Material.Light.NoActionBar" />
+=======
+    <style name="Theme.EntregaAppMoviles" parent="Theme.AppCompat.NoActionBar">
+
+    </style>
+>>>>>>> main
 </resources>
