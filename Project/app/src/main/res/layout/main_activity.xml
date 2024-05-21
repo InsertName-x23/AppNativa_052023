@@ -5,6 +5,7 @@
     android:orientation="horizontal">
 
     <!-- Menú Lateral -->
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -43,6 +44,7 @@
             android:padding="1dp">
 
             <Button
+                android:id="@+id/addFolderBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
@@ -67,49 +69,9 @@
     </LinearLayout>
 
     <!-- Contenido Principal -->
-    <FrameLayout
-        android:layout_width="89dp"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
+        android:layout_width="103dp"
         android:layout_height="match_parent"
-        android:layout_weight="3"
-        android:background="@color/background_page">
-        <!-- Aquí va el contenido principal -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="37dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/filters_desing"
-                android:drawableRight="@drawable/down_arrow_solid_24" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="37dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/filters_desing"
-                android:drawableRight="@drawable/down_arrow_solid_24" />
-
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="wrap_content"
-                android:layout_height="37dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/filters_desing"
-                android:drawableRight="@drawable/down_arrow_solid_24" />
-        </LinearLayout>
-    </FrameLayout>
+        android:layout_weight="3" />
 </LinearLayout>
