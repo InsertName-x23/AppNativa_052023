@@ -5,9 +5,58 @@
     android:layout_height="match_parent"
     tools:context=".FragmentHome">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hola mundo" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="50dp"
+            android:background="#FFFBF5"
+            android:elevation="20dp"
+            android:orientation="vertical"
+
+            tools:ignore="MissingConstraints"/>
+
+        <Button
+            android:id="@+id/button_add"
+            android:layout_width="47dp"
+            android:layout_height="37dp"
+            android:background="@drawable/buttons_menus_desing"
+            android:text="+"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="348dp"
+            tools:layout_editor_absoluteY="5dp" />
+
+        <EditText
+            android:id="@+id/editTextTextName"
+            android:layout_width="198dp"
+            android:layout_height="35dp"
+            android:background="@drawable/text_imputs_desing"
+            android:drawableEnd="@drawable/lb_ic_in_app_search"
+            android:hint="Name"
+            android:inputType="text"
+            android:radius="200dp"
+            android:textColor="@android:color/black"
+            tools:layout_editor_absoluteX="141dp"
+            tools:layout_editor_absoluteY="5dp" />
+
+        <EditText
+            android:id="@+id/editTextTextDate"
+            android:layout_width="123dp"
+            android:layout_height="34dp"
+            android:background="@drawable/text_imputs_desing"
+            android:drawableLeft="@drawable/lb_ic_playback_loop"
+            android:hint="Date"
+            android:inputType="date"
+            android:textColor="@android:color/black"
+            tools:layout_editor_absoluteX="5dp"
+            tools:layout_editor_absoluteY="5dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
