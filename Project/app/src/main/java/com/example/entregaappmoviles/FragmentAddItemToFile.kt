@@ -4,9 +4,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-
 
 class FragmentAddItemToFile : Fragment(R.layout.fragment_add_item_to_file) {
 
@@ -28,8 +29,21 @@ class FragmentAddItemToFile : Fragment(R.layout.fragment_add_item_to_file) {
         // Obtener la referencia de MainActivity
         mainActivity = activity as? MainActivity
 
+        // Mostrar los items del botón seleccionado actualmente
+        displayCurrentButtonItems()
+
         Add.setOnClickListener {
             onClickAdd()
+        }
+    }
+
+    private fun displayCurrentButtonItems() {
+        val selectedButton = mainActivity?.currentSelectedButton
+        if (selectedButton != null) {
+            val selectedButtonData = selectedButton.tag as? ButtonData
+            if (selectedButtonData != null) {
+                updateItemsList(selectedButtonData)
+            }
         }
     }
 
@@ -54,6 +68,9 @@ class FragmentAddItemToFile : Fragment(R.layout.fragment_add_item_to_file) {
                 // Agregar el nuevo elemento a la lista del botón seleccionado
                 selectedButtonData.items.add(newItem)
 
+                // Guardar los botones actualizados en el archivo JSON
+                mainActivity?.saveButtonsToFile()
+
                 // Limpiar los campos de entrada después de agregar el elemento
                 nameEditText.text.clear()
                 dateEditText.text.clear()
@@ -62,6 +79,9 @@ class FragmentAddItemToFile : Fragment(R.layout.fragment_add_item_to_file) {
 
                 // Notificar al usuario que el elemento se agregó correctamente
                 Toast.makeText(requireContext(), "Item added successfully", Toast.LENGTH_SHORT).show()
+
+                // Actualizar la lista de items en el layout
+                updateItemsList(selectedButtonData)
             } else {
                 // Notificar al usuario que debe seleccionar un botón antes de agregar un elemento
                 Toast.makeText(requireContext(), "Please select a button first", Toast.LENGTH_SHORT).show()
@@ -71,9 +91,26 @@ class FragmentAddItemToFile : Fragment(R.layout.fragment_add_item_to_file) {
             Toast.makeText(requireContext(), "Please select a button first", Toast.LENGTH_SHORT).show()
         }
     }
+
+    private fun updateItemsList(selectedButtonData: ButtonData) {
+        // Limpiar la lista de items existentes en el layout
+        val itemsContainer = view?.findViewById<LinearLayout>(R.id.itemsContainer)
+        itemsContainer?.removeAllViews()
+
+        // Agregar cada nombre de item como un nuevo TextView al layout
+        for (item in selectedButtonData.items) {
+            val textView = TextView(requireContext()).apply {
+                text = item.name
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+            }
+            itemsContainer?.addView(textView)
+        }
+    }
+
 }
-
-
 
 
 

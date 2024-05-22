@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
         createButton(buttonData)
     }
 
-    private fun saveButtonsToFile() {
+    fun saveButtonsToFile() {
         val gson = Gson()
         val buttonsJson = gson.toJson(buttonList)
 
@@ -112,10 +112,9 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
                 setMargins(7.dpToPx(), 7.dpToPx(), 7.dpToPx(), 7.dpToPx())
             }
             setBackgroundResource(R.drawable.buttons_desing)
+            tag = buttonData // Asignar el ButtonData al tag del botón
             setOnClickListener {
-                // Aquí actualizas la referencia al botón seleccionado en MainActivity
                 selectButton(this)
-                // Restauras el fragmento actual con FragmentHome
                 replaceFragment(FragmentHome())
             }
             setOnLongClickListener {
@@ -123,8 +122,6 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
                 true
             }
         }
-        // Aquí estableces el tag del botón con su ButtonData
-        newButton.tag = buttonData
         binding.buttonContainer.addView(newButton)
     }
 
@@ -139,14 +136,14 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
         lastSelectedButton = button
         selectedButtonData = button.tag as? ButtonData
 
-        // Actualizas la referencia al botón seleccionado actualmente
+        // Actualizar la referencia al botón seleccionado actualmente
         currentSelectedButton = button
     }
 
     private fun removeButton(button: Button) {
         binding.buttonContainer.removeView(button)
         buttonList.removeIf { it.text == button.text }
-        saveButtonsToFile()
+        saveButtonsToFile() // Guardar los cambios en el archivo JSON
     }
 }
 
