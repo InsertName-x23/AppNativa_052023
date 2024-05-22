@@ -57,11 +57,10 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
     }
 
     private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment_container, fragment)
-        fragmentTransaction.addToBackStack(null) // Agregar a la pila de retroceso
-        fragmentTransaction.commit()
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragment_container, fragment) // Cambiado de replace a add
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun addNewButton() {
@@ -140,8 +139,12 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
         // Actualizar la referencia al botón seleccionado actualmente
         currentSelectedButton = button
 
-        // Navegar a FragmentHome y actualizar la lista de ítems
-        replaceFragment(FragmentHome())
+        // Solo reemplazar el fragmento si no es FragmentHome
+        if (supportFragmentManager.findFragmentById(R.id.fragment_container) !is FragmentHome) {
+            replaceFragment(FragmentHome())
+        }
+
+        // Actualizar la lista de ítems
         (supportFragmentManager.findFragmentById(R.id.fragment_container) as? FragmentHome)?.displayItems(getSelectedButtonItems().orEmpty())
     }
 
