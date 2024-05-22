@@ -5,46 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        tools:ignore="MissingConstraints">
+        android:layout_marginRight="20dp">
 
         <EditText
             android:id="@+id/editTextTextFilterDate"
+            android:layout_width="0dp"
             android:layout_height="35dp"
-            android:layout_width="130dp"
             android:layout_marginTop="6.5dp"
             android:hint="Date"
             android:inputType="date"
-            android:background="@drawable/text_imputs_desing" />
+            android:background="@drawable/text_imputs_desing"
+            app:layout_constraintWidth_percent="0.30"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
 
         <EditText
             android:id="@+id/editTextTextFilterName"
+            android:layout_width="0dp"
             android:layout_height="35dp"
-            android:layout_width="150dp"
             android:layout_marginTop="6.5dp"
-            android:layout_marginLeft="20dp"
             android:hint="Name"
             android:inputType="text"
             android:background="@drawable/text_imputs_desing"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            app:layout_constraintWidth_percent="0.45"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/editTextTextFilterDate"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
 
         <Button
             android:id="@+id/editTextTextFilterAdd"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="6.5dp"
             android:background="@drawable/buttons_menus_desing"
-            android:drawableEnd="@drawable/plus_regular_24" />
-    </LinearLayout>
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <LinearLayout
-        android:background="@drawable/default_background"
+        android:background="#FFFBF5"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
