@@ -13,6 +13,7 @@ import com.google.gson.reflect.TypeToken
 
 class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener {
 
+
     lateinit var binding: MainActivityBinding
     private val buttonList = mutableListOf<ButtonData>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,7 +54,7 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
     }
 
     private fun addNewButton() {
-        val buttonData = ButtonData("New Button ${buttonList.size + 1}")
+        val buttonData = ButtonData("${buttonList.size + 1}")
         buttonList.add(buttonData)
         createButton(buttonData)
     }
@@ -67,15 +68,24 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
         editor.apply()
     }
 
+    private var lastSelectedButton: Button? = null
+
     private fun createButton(buttonData: ButtonData) {
         val newButton = Button(this).apply {
             text = buttonData.text
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
-            )
+            ).apply {
+                // Agregar márgenes al botón
+                setMargins(7.dpToPx(), 7.dpToPx(), 7.dpToPx(), 7.dpToPx())
+            }
+            setBackgroundResource(R.drawable.buttons_desing) // Aplicar el diseño predeterminado
             setOnClickListener {
-                // Define the functionality for the new button here
+                // Cambiar el estilo del botón seleccionado
+                selectButton(this)
+                // Reemplazar el fragmento actual con FragmentHome
+                replaceFragment(FragmentHome())
             }
             setOnLongClickListener {
                 removeButton(this)
@@ -83,6 +93,21 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
             }
         }
         binding.buttonContainer.addView(newButton)
+    }
+
+    // Extensión para convertir dp a píxeles
+    private fun Int.dpToPx(): Int {
+        val scale = resources.displayMetrics.density
+        return (this * scale + 0.5f).toInt()
+    }
+
+    private fun selectButton(button: Button) {
+        // Restablecer el estilo del último botón seleccionado
+        lastSelectedButton?.setBackgroundResource(R.drawable.buttons_desing)
+        // Aplicar el nuevo estilo al botón seleccionado
+        button.setBackgroundResource(R.drawable.buttons_selected_desing)
+        // Actualizar la referencia al último botón seleccionado
+        lastSelectedButton = button
     }
 
     private fun removeButton(button: Button) {
