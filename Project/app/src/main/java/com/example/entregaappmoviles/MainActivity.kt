@@ -13,6 +13,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 
+
 class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener {
 
     lateinit var binding: MainActivityBinding
@@ -37,11 +38,11 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
             replaceFragment(FragmentHome())
         }
 
-        binding.addFolderBtn.setOnClickListener() {
+        binding.addFolderBtn.setOnClickListener {
             replaceFragment(FragmentAddNewFile())
         }
 
-        binding.homeButton.setOnClickListener() {
+        binding.homeButton.setOnClickListener {
             replaceFragment(FragmentHome())
         }
     }
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragment_container, fragment)
+        fragmentTransaction.addToBackStack(null) // Agregar a la pila de retroceso
         fragmentTransaction.commit()
     }
 
@@ -115,7 +117,6 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
             tag = buttonData // Asignar el ButtonData al tag del botón
             setOnClickListener {
                 selectButton(this)
-                replaceFragment(FragmentHome())
             }
             setOnLongClickListener {
                 removeButton(this)
@@ -138,6 +139,10 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
 
         // Actualizar la referencia al botón seleccionado actualmente
         currentSelectedButton = button
+
+        // Navegar a FragmentHome y actualizar la lista de ítems
+        replaceFragment(FragmentHome())
+        (supportFragmentManager.findFragmentById(R.id.fragment_container) as? FragmentHome)?.displayItems(getSelectedButtonItems().orEmpty())
     }
 
     private fun removeButton(button: Button) {
@@ -145,5 +150,9 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
         buttonList.removeIf { it.text == button.text }
         saveButtonsToFile() // Guardar los cambios en el archivo JSON
     }
-}
 
+    // Función para obtener los ítems del botón seleccionado
+    fun getSelectedButtonItems(): List<Item>? {
+        return selectedButtonData?.items
+    }
+}
