@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/editTextTextFilterDate"
+            android:layout_height="35dp"
+            android:layout_width="130dp"
+            android:layout_marginTop="6.5dp"
+            android:hint="Date"
+            android:inputType="date"
+            android:background="@drawable/text_imputs_desing" />
+
+        <EditText
+            android:id="@+id/editTextTextFilterName"
+            android:layout_height="35dp"
+            android:layout_width="150dp"
+            android:layout_marginTop="6.5dp"
+            android:layout_marginLeft="20dp"
+            android:hint="Name"
+            android:inputType="text"
+            android:background="@drawable/text_imputs_desing"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/editTextTextFilterAdd"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/buttons_menus_desing"
+            android:drawableEnd="@drawable/plus_regular_24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/default_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:elevation="20dp"
+        tools:ignore="MissingConstraints">
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
