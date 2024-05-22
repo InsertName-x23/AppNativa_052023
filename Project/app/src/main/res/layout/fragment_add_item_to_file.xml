@@ -19,7 +19,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/editTextTextName"
+            android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginLeft="20dp"
@@ -31,7 +31,7 @@
             android:radius="200dp" />
 
         <EditText
-            android:id="@+id/editTextTextDate"
+            android:id="@+id/editTextDate"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginLeft="20dp"
@@ -42,7 +42,7 @@
             android:inputType="date" />
 
         <EditText
-            android:id="@+id/editTextTextAmount"
+            android:id="@+id/editTextAmount"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginLeft="20dp"
@@ -53,7 +53,7 @@
             android:inputType="number" />
 
         <EditText
-            android:id="@+id/editTextTextDescripcion"
+            android:id="@+id/editTextDescripcion"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginLeft="20dp"
