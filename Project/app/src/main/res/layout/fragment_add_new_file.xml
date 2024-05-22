@@ -15,7 +15,6 @@
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
         android:elevation="20dp"
-
         tools:ignore="MissingConstraints">
 
         <EditText
@@ -28,40 +27,19 @@
             android:background="@drawable/text_imputs_desing"
             android:hint="Name"
             android:inputType="text"
-            android:radius="200dp" />
+            android:radius="200dp"
+            android:textColor="@android:color/black" />
 
-        <EditText
-            android:id="@+id/editTextTextDate"
+        <Spinner
+            android:id="@+id/iconSpinner"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="25dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/text_imputs_desing"
-            android:hint="Date"
-            android:inputType="date" />
+            tools:ignore="MissingConstraints" />
 
-        <EditText
-            android:id="@+id/editTextTextAmount"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/text_imputs_desing"
-            android:hint="Amount"
-            android:inputType="number" />
-
-        <EditText
-            android:id="@+id/editTextTextDescripcion"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/text_imputs_desing"
-            android:hint="Descripcion"
-            android:inputType="text" />
 
         <Button
             android:id="@+id/button_add"

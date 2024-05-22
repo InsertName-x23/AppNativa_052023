@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.addFolderBtn.setOnClickListener() {
-            replaceFragment(FragmentAddFolder())
+            replaceFragment(FragmentAddNewFile())
         }
 
         binding.homeButton.setOnClickListener() {
