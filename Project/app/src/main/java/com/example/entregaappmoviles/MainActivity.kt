@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
     }
 
     private fun addNewButton() {
-        val buttonData = ButtonData("${buttonList.size + 1}", Litem)
+        val buttonData = ButtonData("${buttonList.size + 1}")
         buttonList.add(buttonData)
         createButton(buttonData)
     }
@@ -144,7 +144,7 @@ class MainActivity : AppCompatActivity(), FragmentAddNewFile.OnButtonAddListener
             replaceFragment(FragmentHome())
         }
 
-        // Actualizar la lista de ítems
+        // Actualizar la lista de ítems en el fragmento FragmentHome
         (supportFragmentManager.findFragmentById(R.id.fragment_container) as? FragmentHome)?.displayItems(getSelectedButtonItems().orEmpty())
     }
 
